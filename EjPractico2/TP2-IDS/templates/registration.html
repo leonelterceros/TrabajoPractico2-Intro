@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %} Registro | MTB Rural {% endblock %}
+
+{% block body %}
+
+    <!-- Inscription's Title Section -->
+     <section id="register" class="register section">
+
+         
+         <form action="{{ url_for('register') }}" method="post" class="email-form">
+             
+             <h2>INSCRIPCION</h2>
+             
+             <div class="full-name">
+                <label for="name">Nombre</label>
+                <input type="text" name="name" id="name" class="form-control" required="">
+                
+                <label for="surname"><br>Apellido</label>
+                <input type="text" name="surname" id="surname" class="form-control" required="">
+            </div>
+
+            <div class="data-register">
+                <label for="telefono">Teléfono</label>
+                <input type="text" name="telefono" id="telefono" class="form-control" required="">
+                
+                <label for="dni"><br>Numero de Documento</label>
+                <input type="text" name="dni" id="dni" class="form-control" required="">
+            </div>
+                
+            <div class="email">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="form-control" required="">
+            </div>
+            
+            <div class="categoria">
+                <select name="categoria-carrera">
+                    <option value="30km"> 30km</option>
+                    <option value="80km"> 80km</option>
+                </select>
+            </div>
+            
+            <div class="boton-inscripcion">
+                <button type="submit">Inscribirme</button>
+            </div>
+                
+        </form>
+            
+        <div class="fondo-register">
+            <img src="{{ url_for('static', filename='images/mtb3.jpg') }}">
+        </div>
+
+    </section><!-- End Inscription Section -->
+{% endblock %}

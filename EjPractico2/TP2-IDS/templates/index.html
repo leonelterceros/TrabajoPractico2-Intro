@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block title %} Inicio | MTB Rural{% endblock %}
+
+{% block body %}
+
+    <!--imagen ppal-->
+    <section id="ppal" class="ppal section">
+        <div class="fondo">
+                <img src="{{ url_for('static', filename='images/mtb1.png') }}" alt="" data-aos="fade-in" class="">
+            </div>
+
+            <div class="title" data-aos="fade-up" data-aos-delay="100">
+                
+                <div class="fecha-num">
+                    <img src="{{ url_for('static', filename='images/fecha_y_hora_mtb_rural_-_inicio_vector.png') }}" alt="">
+                </div>
+
+                <nav class="boton-img-ppal">
+                    <a href="{{ url_for('register') }}"
+                    >INSCRIBITE ACÁ!</a>            
+                </nav>
+            </div>
+    </section>
+    <!--/imagen ppal-->
+
+    <!--Info-->
+        <section id="info" class="info section">
+            <div class="info-general">
+                <h2>Información</h2>
+                <p>El {{ info_evento[1]["fecha"] }} llega la segunda edición de #{{ info_evento[1]["nombre"] }}!!<br>Este año tendremos un circuito que lo tiene todo:<br>Tierra, pasto y piedra, puentes, arroyos, senderos, caminos de huella y consolidados sumados a sus falsos llanos son lo que convierten a #mtbrural en una carrera diferente que te dejara sin aliento pero que vas a disfrutar!!!<br>Las inscripciones están abiertas<br>Categorías: {{ info_evento[1]["modalidad_costo"][1]["nombre"] }} y
+            {{ info_evento[1]["modalidad_costo"][2]["nombre"] }}.<br>Lugar: {{ info_evento[1]["lugar"] }}, {{ info_evento[1]["horario"] }}.<br>Si sos amante del mountain bike, no lo dudes, la despedida del año la corremos en MTB Rural!!!</p>
+            </div>
+        </section>
+    <!--/Info-->
+
+    <!--Reglamento - Kits-->
+        <section id="reglamento-kit" class="reglamento-kit section">
+            <div class="reglamento">
+                <h2>REGLAMENTO</h2>
+                <p>Conocé los reglamentos de {{ info_evento[1]["nombre"] }}<br>Descargalo aquí</p>
+                <a href="{{ url_for('static', filename='docs/Reglamento MTB Rural.pdf') }}" target="_blank" alt="">REGLAMENTO</a>
+            </div>
+            
+            <div class="kit">
+                <h2>KITS</h2>
+                <ul> El kit incluye:<br>
+                    <li>número de participante</li>
+                    <li>Productos de patrocinadores</li>
+                    <li>Remera del evento</li>
+                </ul>
+                <p>Categoria {{ info_evento[1]["modalidad_costo"][1]["nombre"] }} {{ info_evento[1]["modalidad_costo"][1]["valor"] }}<br>Categoria {{ info_evento[1]["modalidad_costo"][2]["nombre"] }} {{ info_evento[1]["modalidad_costo"][2]["valor"] }}<br>ABONAS el TOTAL ONLINE + costos de inscripción<br>Tenés hasta el 02 de octubre para INSCRIBIRTE!!!<br>Podes retirar tu kit entre el 01 y 03 de Octubre en {{ info_evento[1]["organizador"] }}<br>o retiras tu kit el dia de la carrera entre las 6:00hs y 7:30hs!!!</p>
+                <a href="{{ url_for('static', filename='docs/Deslinde MTB Rural.pdf') }}" target="_blank" alt="">Descargar deslinde</a>
+            </div>
+        
+        </section>
+    <!--/Reglamento - Kits-->
+
+    <!-- slider -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+        <section id="init-swiper" class="init-swiper section">
+            
+            <h2>EDICION PASADA</h2>
+            
+            <div class="swiper-config">
+                {
+                "loop": true,
+                "autoplay": { "delay": 3000 },
+                "slidesPerView": 1,
+                "spaceBetween": 10,
+                "pagination": { "el": ".swiper-pagination", "clickable": true },
+                "navigation": { "nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev" }
+                }
+            </div>
+
+            <!-- Wrapper de slides -->
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="{{ url_for('static', filename='images/foto-evento1.jpg') }}" alt="Imagen 1"></div>
+                <div class="swiper-slide"><img src="{{ url_for('static', filename='images/foto-evento2.jpg') }}" alt="Imagen 2"></div>
+                <div class="swiper-slide"><img src="{{ url_for('static', filename='images/foto-evento3.jpg') }}" alt="Imagen 3"></div>
+                <div class="swiper-slide"><img src="{{ url_for('static', filename='images/foto-evento4.jpg') }}" alt="Imagen 4"></div>
+                <div class="swiper-slide"><img src="{{ url_for('static', filename='images/foto-evento5.jpg') }}" alt="Imagen 5"></div>
+                <div class="swiper-slide"><img src="{{ url_for('static', filename='images/foto-evento6.jpg') }}" alt="Imagen 6"></div>
+                <div class="swiper-slide"><img src="{{ url_for('static', filename='images/foto-evento7.jpg') }}" alt="Imagen 7"></div>
+                <div class="swiper-slide"><img src="{{ url_for('static', filename='images/foto-evento8.jpg') }}" alt="Imagen 8"></div>
+                <div class="swiper-slide"><img src="{{ url_for('static', filename='images/foto-evento9.jpg') }}" alt="Imagen 9"></div>
+            </div>
+
+            <!-- Paginación y navegación -->
+
+        </section>
+    <!--/slider-->
+
+    <!--mapa carrera-->
+    <section id="maps" class="maps section">
+        <div class="titulo-30km">
+            <img src="{{ url_for('static', filename='images/titulo_30km.png') }}" alt="">
+        </div>
+        <iframe
+            src="https://www.google.com/maps/d/u/0/embed?mid=1Nc8SkIVSrPhTxlLotoJdCQky63LOX3k&ehbc=2E312F">
+        </iframe>
+
+        <div class="titulo-80km">
+            <img src="{{ url_for('static', filename='images/titulo_80km.png') }}" alt="">
+        </div>
+        <iframe
+            src="https://www.google.com/maps/d/u/0/embed?mid=1rBzo_LC1eCI6oLOtRIU6XR8z0Ou_Ip8&ehbc=2E312F">
+        </iframe>
+    </section>
+    <!--/mapa carrera-->
+
+    <!--imagen auspiciantes-->
+    <section id="sponsors" class="sponsors section">
+
+        <div class="titulo-sponsors">
+            <img src="{{ url_for('static', filename='images/nuestros_sponsors_-_sponsors.png') }}" alt="">
+        </div> 
+
+        <div class="sponsors-arriba">
+            <img src="{{ url_for('static', filename='images/tandil.png') }}" alt="" data-aos="fade-in" class="tandil">
+            <img src="{{ url_for('static', filename='images/gatorade.png') }}" alt="" data-aos="fade-in" class="gatorade">
+            <img src="{{ url_for('static', filename='images/star-nutrition.png') }}" alt="" data-aos="fade-in" class="star-nutrition">
+            <img src="{{ url_for('static', filename='images/smartwater.png') }}" alt="" data-aos="fade-in" class="smartwater">
+        </div>
+
+        <div class="sponsors-abajo">
+            <img src="{{ url_for('static', filename='images/casio.png') }}" alt="" data-aos="fade-in" class="casio">
+            <img src="{{ url_for('static', filename='images/overtech.png') }}" alt="" data-aos="fade-in" class="overtech">
+            <img src="{{ url_for('static', filename='images/adidas.png') }}" alt="" data-aos="fade-in" class="adidas">
+            <img src="{{ url_for('static', filename='images/noblex.png') }}" alt="" data-aos="fade-in" class="noblex">
+        </div>
+
+    </section><!--/imagen auspiciantes-->
+            
+{% endblock %}

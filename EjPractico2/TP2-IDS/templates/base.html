@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>
+            {% block title %} {% endblock %}
+        </title>
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    </head>
+    
+    <body>
+
+        <i class="header-toggle d-xl-none bi bi-list"></i>
+        
+        <!-- header -->
+        <header id="header" class="header">
+            
+
+            <a href="#" class="logo">
+                <img src="{{ url_for('static', filename='images/MTB_RURAL_transparente_logo.png') }}" alt="logo-carrera">
+            </a>
+            
+            <nav id="main-nav" class="main-nav">
+                    <a href="{{ url_for('index') }}"
+                    >Inicio</a>
+
+                    <a href="#info"
+                    >Información</a>
+
+                    <a href="#maps"
+                    >Mapas</a>
+
+                    <a href="{{ url_for('register') }}"
+                    >Inscripcion</a>
+            </nav>
+
+            <nav class="social-media">
+                <a 
+                    href="https://www.instagram.com/leeo_terceros/" 
+                    target="_blank"
+                    class="instagram"
+                    ><img src="{{ url_for('static', filename='images/logoig.png') }}" alt="logo-ig"></a>
+
+                <a 
+                    href="https://x.com/leeo_terceros" 
+                    target="_blank"
+                    class="x"
+                    ><img src="{{ url_for('static', filename='images/logox.png') }}" alt="logo-x"></a>
+
+                <a 
+                    href="https://www.facebook.com/LeeoTerceros?locale=es_LA"
+                    target="_blank" 
+                    class="facebook"
+                    ><img src="{{ url_for('static', filename='images/logofacebook.png') }}" alt="logo-fb"></a>
+            </nav>
+        </header>
+        <!-- /header -->
+
+        <main class="main">
+            {% block body %} {% endblock %}
+        </main>
+        
+        <!-- footer1 -->
+        <footer class="footer1">
+            <div class="contenido-footer">
+                <nav class="footer-contact">
+                    <p>CONTACTO</p>
+                    <a 
+                    href="mailto:leonelterceros28@gmail.com" 
+                    target="_blank"
+                    class="footer-link" 
+                    >Mail</a>
+                    
+                    <a 
+                    href="https://Wa.me/+5491138651219" 
+                    class="footer-link"
+                    target="_blank" 
+                    >WhatsApp</a>
+                </nav>
+                
+                <nav class="footer-sections">
+                    <p>SECCIONES</p>
+                    <a href="{{ url_for('index') }}"
+                    >Inicio</a>
+
+                    <a href="#info"
+                    >Información</a>
+
+                    <a href="#maps"
+                    >Mapas</a>
+                    
+                    <a href="{{ url_for('register') }}"
+                    >Inscripcion</a>            
+                </nav>
+                
+                <nav class="footer-social-media">
+                    <p>REDES SOCIALES</p>
+                    <a 
+                    href="https://www.instagram.com/leeo_terceros/" 
+                    target="_blank"
+                    class="instagram"
+                    >Instagram</a>
+                    
+                    <a 
+                    href="https://x.com/leeo_terceros" 
+                    target="_blank"
+                    class="x"
+                    >X</a>
+                    
+                    <a 
+                    href="https://www.facebook.com/LeeoTerceros?locale=es_LA"
+                    target="_blank" 
+                    class="facebook"
+                    >Facebook</a>
+                </nav>
+            </div>
+
+        </footer>
+            <!-- /footer1 -->
+            
+            <!-- footer2 -->
+        <footer class="footer2">
+            
+            <div class="date">
+                Copyright ©
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>
+                Todos los derechos reservados.
+            </div>
+        
+        </footer>
+        <!-- /footer2 -->
+            
+        <!-- Scroll Top -->
+        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+        <!-- Preloader -->
+        <div id="preloader"></div>
+
+        <!-- Main JS File -->
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+        
+    </body>
+</html>
